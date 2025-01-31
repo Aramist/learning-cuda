@@ -131,7 +131,7 @@ __global__ void kernel_blurImg(const float *M_in, float *M_out, size_t width, si
   
   ck = blockIdx.x;
   cj = blockIdx.y * blockDim.x + threadIdx.x;
-  ci = blockIdx.z * blockDim.y + threadIdx.y;
+  ci = blockIdx.y * blockDim.y + threadIdx.y;
 
   if (ci >= height || cj >= width) return;
 
